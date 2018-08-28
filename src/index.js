@@ -7,13 +7,16 @@ import config from './conf';
 import cors from 'cors';
 import { join } from 'path';
 import log from './services/middlewares/helper';
-import homeHandler from './api/home'
+import homeHandler from './api/auth'
 import * as webSocket from 'ws';
+import bodyParser from 'express';
+
 const routes = Router();
 const app = express();
 let port = config.app['port'];
 let whitelist = Object.keys(config.whitelist).map(k => config.whitelist[k]);
-
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 app.set("port", port);
 app.use(cors({
     origin: (origin, callback) => {
