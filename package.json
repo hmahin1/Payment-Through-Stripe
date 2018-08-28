@@ -28,6 +28,7 @@
     "nodemon": "^1.17.5",
     "sequelize": "^4.37.10",
     "sequelize-cli": "^4.0.0",
+    "stripe": "^6.8.0",
     "ws": "^5.2.0"
   }
 }

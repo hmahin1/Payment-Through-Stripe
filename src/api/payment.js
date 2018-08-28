@@ -18,7 +18,7 @@ export default class LockApi {
 
     registerRoutes() {
         let router = this.router;
-        router.post('/open', log, openLockHandler),
+        router.post('/create-customer', log, openLockHandler),
         router.post('/close', log, closeLockHandler ),
         router.get('/available-locks', log, getAvailableLocksHandler ),
         router.get('/get-my-locks', log, getMyLocksHandler )       
